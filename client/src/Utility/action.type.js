@@ -1,3 +1,5 @@
 export const Type = {
   ADD_TO_BASKRT: " ADD_TO_BASKRT",
+  REMOVE_FROM_BASKET: "REMOVE_FROM_BASKET",
+  SET_USER: "SET_USER",
 };
