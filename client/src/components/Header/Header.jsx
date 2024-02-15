@@ -6,9 +6,11 @@ import { BiCart } from "react-icons/bi";
 import classes from "./header.module.css";
 import LowerHeader from "./LowerHeader";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
+
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -39,13 +41,13 @@ function Header() {
               <option value="">All</option>
             </select>
             <input type="text" />
-            {<BsSearch size={25} />}
+            {<BsSearch size={38} />}
           </div>
           {/* right side link */}
           <div className={classes.order__container}>
             <Link to="" className={classes.language}>
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/800px-Flag_of_the_United_Arab_Emirates.svg.png"
+                src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
                 alt=""
               />
               <select>
@@ -53,10 +55,19 @@ function Header() {
               </select>
             </Link>
             {/* three components */}
-            <Link to="/auth">
+            <Link to={!user && "/auth"}>
               <div>
-                <p>Sign In</p>
-                <span>Account & Lists</span>
+                {user ? (
+                  <>
+                    <p>Hello, {user?.email?.split("@")[0]}</p>
+                    <span onClick={() => auth.signOut()}>Sign Out</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
               </div>
             </Link>
             {/* orders */}

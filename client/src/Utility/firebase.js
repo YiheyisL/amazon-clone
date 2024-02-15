@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyAQb0fj7r99fBfoCsWLfeZhE4YmDbVZKzk",
-  authDomain: "clone-257c1.firebaseapp.com",
-  projectId: "clone-257c1",
-  storageBucket: "clone-257c1.appspot.com",
-  messagingSenderId: "285821075246",
-  appId: "1:285821075246:web:8a0e5b6e0cb2d02f40c4bf",
+  apiKey: "AIzaSyCh8T9eTLe2aewgguLazH22b2sovwHCZoE",
+  authDomain: "clone-36711.firebaseapp.com",
+  projectId: "clone-36711",
+  storageBucket: "clone-36711.appspot.com",
+  messagingSenderId: "592942764986",
+  appId: "1:592942764986:web:78ab170273aae276b54383",
 };
 
 // Initialize Firebase
