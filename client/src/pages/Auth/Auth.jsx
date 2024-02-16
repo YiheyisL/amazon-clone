@@ -15,7 +15,7 @@ function Auth() {
   const [error, setError] = useState("");
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate = useNavigate();
-  console.log(navigate);
+
   const navStateData = useLocation();
   const [loading, setLoading] = useState({
     signIn: false,
@@ -70,7 +70,7 @@ function Auth() {
       {/* form */}
       <div className={classes.login_container}>
         <h1>Sign In</h1>
-        {navStateData?.state?.meg && (
+        {navStateData?.state?.msg && (
           <small
             style={{
               padding: "5px",

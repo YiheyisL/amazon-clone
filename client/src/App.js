@@ -17,11 +17,11 @@ function App() {
       } else {
         dispatch({
           type: Type.SET_USER,
-          type: null,
+          user: null,
         });
       }
     });
-  }, []);
+  }, [user]);
   return <Routing />;
 }
 
