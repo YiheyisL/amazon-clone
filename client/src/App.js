@@ -21,7 +21,7 @@ function App() {
         });
       }
     });
-  }, [user]);
+  }, []);
   return <Routing />;
 }
 
